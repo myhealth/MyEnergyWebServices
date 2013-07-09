@@ -29,7 +29,7 @@ namespace MyEnergyWS.Controllers
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+            return "value2";
         }
 
         // POST api/values
