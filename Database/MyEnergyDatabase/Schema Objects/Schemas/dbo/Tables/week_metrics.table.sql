@@ -7,5 +7,6 @@
 	[height] SMALLINT NOT NULL,
 
 	PRIMARY KEY([user_id], [date]),
-	FOREIGN KEY([user_id]) REFERENCES [user]([user_id])
+	
+	CONSTRAINT [weekly_metric_user] FOREIGN KEY([user_id]) REFERENCES [user]([user_id])
 )

@@ -21,5 +21,5 @@
 	[espessura_adutor_policis] SMALLINT NOT NULL,
 
 	PRIMARY KEY([user_id], [date]),
-	FOREIGN KEY([user_id]) REFERENCES [user]([user_id])
+	CONSTRAINT [year_metrics_user]  FOREIGN KEY([user_id]) REFERENCES [user]([user_id])
 )

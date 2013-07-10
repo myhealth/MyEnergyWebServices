@@ -1,7 +1,4 @@
-﻿/**
-	DESC: full specifies an activity an user can performs
-*/
-CREATE TABLE [dbo].[activity]
+﻿CREATE TABLE [dbo].[physical_activity]
 (
 	id INT NOT NULL IDENTITY, 
 	name NVARCHAR(200) NOT NULL,
@@ -11,7 +8,7 @@ CREATE TABLE [dbo].[activity]
 	[enabled] BIT NOT NULL DEFAULT 1,
 
 	PRIMARY KEY(id),
-	FOREIGN KEY(category_id) REFERENCES activity_category(id)
+	CONSTRAINT [fk_physical_activity_physical_activity_category] FOREIGN KEY(category_id) REFERENCES physical_activity_category(id)
 
 )
 
