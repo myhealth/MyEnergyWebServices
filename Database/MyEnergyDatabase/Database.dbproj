@@ -185,9 +185,6 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\food_category.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\food_subcategory.table.sql">
-      <SubType>Code</SubType>
-    </Build>
     <Build Include="Schema Objects\Schemas\dbo\Tables\food.table.sql">
       <SubType>Code</SubType>
     </Build>
