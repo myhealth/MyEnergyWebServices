@@ -12,8 +12,11 @@ namespace MyEnergyWS.Controllers
     public class UsersController : ApiController
     {
         // GET api/values
-        public IEnumerable<User> Get(int index, int count = 50)
+        public IEnumerable<User> Get(int index=1, int count = 50)
         {
+            if (index <= 0) throw 
+                new HttpResponseException(HttpStatusCode.BadRequest);
+
             List<User> result = new List<User>();
 
             using (DbManager db = new DbManager("MyEnergy"))

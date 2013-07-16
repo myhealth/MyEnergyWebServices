@@ -4,6 +4,5 @@
 	[name] NVARCHAR(255) NOT NULL,
 	[description] TEXT,
 
-
-	PRIMARY KEY([id])
+	CONSTRAINT pk_medication PRIMARY KEY([id])
 )

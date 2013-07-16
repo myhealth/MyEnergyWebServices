@@ -1,8 +1,11 @@
-﻿CREATE TABLE [dbo].[physical_activity_category] 
+﻿CREATE TABLE [dbo].[activity_category] 
 (
-	[id] INT IDENTITY(1,1) NOT NULL ,
+	[id] INT IDENTITY NOT NULL ,
 	[name] NVARCHAR(300) NOT NULL,
-	[enabled] BIT DEFAULT 1 NOT NULL,
+	[description] NVARCHAR (MAX) NULL,
+	[image_uri] NVARCHAR(512) NULL,
 
-	PRIMARY KEY(id)
+	CONSTRAINT pk_activity_category PRIMARY KEY(id),
+
+	
 )

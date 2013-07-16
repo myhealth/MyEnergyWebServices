@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[user_physical_activity]
+﻿CREATE TABLE [dbo].[user_activity]
 (
 	id INT NOT NULL IDENTITY,  
 	[user_id] INT NULL, 
@@ -6,8 +6,13 @@
 	[activity_id] INT NOT NULL,
 	[duration_min] INT NOT NULL,
 	
-	PRIMARY KEY(id),
-	CONSTRAINT [fk_user_physical_physical_activity_category]  FOREIGN KEY([user_id]) REFERENCES physical_activity_category(id) 
+	CONSTRAINT pk_user_activity PRIMARY KEY(id),
+
+	CONSTRAINT [fk_user_activity_category]  
+		FOREIGN KEY([user_id]) 
+			REFERENCES activity_category(id) 
+		ON DELETE CASCADE 
+		ON UPDATE CASCADE  
 
 )
 

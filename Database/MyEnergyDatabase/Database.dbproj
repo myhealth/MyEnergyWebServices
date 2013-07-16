@@ -26,7 +26,7 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>.\sql\release\</OutputPath>
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
-    <TargetConnectionString>Data Source=(local)\SQLEXPRESS;Persist Security Info=True;User ID=sa;Pooling=False</TargetConnectionString>
+    <TargetConnectionString>Data Source=(local)\MYENERGY;Integrated Security=True;Pooling=False</TargetConnectionString>
     <TargetDatabase>MyEnergy</TargetDatabase>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
     <SuppressWarnings>
@@ -39,7 +39,7 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>.\sql\debug\</OutputPath>
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
-    <TargetConnectionString>Data Source=(local)\SQLEXPRESS;Persist Security Info=True;User ID=sa;Pooling=False</TargetConnectionString>
+    <TargetConnectionString>Data Source=(local)\MYENERGY;Persist Security Info=True;User ID=sa;Pooling=False</TargetConnectionString>
     <TargetDatabase>MyEnergy</TargetDatabase>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
     <SuppressWarnings>
@@ -78,7 +78,6 @@
     <Folder Include="Schema Objects\Schemas\dbo\Tables\Constraints\" />
     <Folder Include="Schema Objects\Schemas\dbo\Tables\Indexes\" />
     <Folder Include="Schema Objects\Schemas\dbo\Tables\Keys\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\Triggers\" />
     <Folder Include="Schema Objects\Schemas\dbo\Tables\Statistics\" />
     <Folder Include="Schema Objects\Schemas\dbo\Views\" />
     <Folder Include="Schema Objects\Schemas\dbo\Views\Indexes\" />
@@ -115,6 +114,7 @@
     <Folder Include="Schema Objects\Database Level Objects\Storage\Full Text Catalogs\" />
     <Folder Include="Schema Objects\Database Level Objects\Storage\Partition Functions\" />
     <Folder Include="Schema Objects\Database Level Objects\Storage\Partition Schemes\" />
+    <Folder Include="Schema Objects\Schemas\dbo\Tables\Statistics\Triggers" />
   </ItemGroup>
   <ItemGroup>
     <PropertiesFile Include="Properties\Database.sqlsettings">
@@ -137,7 +137,7 @@
     <BuildContributorArgument Include="OutDir=$(OutDir)" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\physical_activity.table.sql">
+    <Build Include="Schema Objects\Schemas\dbo\Tables\activity.table.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\dbo\Tables\user.table.sql">
@@ -155,13 +155,7 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\GetUsers.proc.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\week_metrics.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\month_metrics.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\year_metrics.table.sql">
+    <Build Include="Schema Objects\Schemas\dbo\Tables\user_anthropometric.table.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\dbo\Tables\user_medical_condition.table.sql">
@@ -173,7 +167,7 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\medication.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\pregnancy.table.sql">
+    <Build Include="Schema Objects\Schemas\dbo\Tables\user_pregnancy.table.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\dbo\Tables\breast_feeding.table.sql">
@@ -188,5 +182,25 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\food.table.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\food_portion_image.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\user_medication.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\anthropometric_trait.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\activity_picture.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\user_breast_feading.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+  </ItemGroup>
+  <ItemGroup>
+    <NotInBuild Include="Data Generation Plans\DataGenerationPlan1.dgen">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
   </ItemGroup>
 </Project>

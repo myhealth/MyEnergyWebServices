@@ -5,5 +5,5 @@
 	[start_date] DATE NOT NULL,
 	[end_date] DATE NULL,
 
-	PRIMARY KEY([id])
+	CONSTRAINT pk_breast_feeding PRIMARY KEY([id])
 )
