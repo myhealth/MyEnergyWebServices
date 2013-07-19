@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MyEnergyWS.Models;
 
 namespace MyEnergyWS.Controllers
 {
@@ -10,7 +11,20 @@ namespace MyEnergyWS.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var uc = new UsersController();
+
+            User x = new User();
+
+            x.first_name = "Arsénio";
+
+            return View(x);
+
+        }
+
+        public ActionResult Exemplo(User x)
+        {
+            
+            return View(x);
         }
     }
 }

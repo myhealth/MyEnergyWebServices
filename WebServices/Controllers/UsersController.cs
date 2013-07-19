@@ -26,8 +26,6 @@ namespace MyEnergyWS.Controllers
                     db.Parameter("@index", index),
                     db.Parameter("@count", count)
                    ).ExecuteList<User>();
-                    
-
             }
 
             return result;

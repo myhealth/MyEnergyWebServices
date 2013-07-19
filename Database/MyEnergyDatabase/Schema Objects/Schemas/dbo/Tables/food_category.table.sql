@@ -20,8 +20,4 @@ CREATE TABLE [dbo].[food_category]
 	
 	CONSTRAINT fk_category_subcategory 
 		FOREIGN KEY ([category_id]) REFERENCES [food_category](id)
-		ON DELETE CASCADE 
-		ON UPDATE CASCADE  
-
-	
 )
