@@ -25,31 +25,13 @@
 			<Property Name="IsFullTextEnabled" Value="True" />
 			<Property Name="PageVerifyMode" Value="3" />
 		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="ISqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[activity].[id]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[activity]" />
-				</Entry>
-			</Relationship>
-		</Element>
 		<Element Type="ISql100UniqueConstraint">
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
 					<Element Type="ISqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[food_category].[name]" />
+								<References Name="[dbo].[FoodCategory].[Name]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -57,7 +39,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[food_category]" />
+					<References Name="[dbo].[FoodCategory]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -67,12 +49,12 @@
 			</Property>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[food]" />
+					<References Name="[dbo].[Food]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForColumn">
 				<Entry>
-					<References Name="[dbo].[food].[alchool]" />
+					<References Name="[dbo].[Food].[Alchool]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -82,35 +64,35 @@
 			</Property>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[user]" />
+					<References Name="[dbo].[User]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForColumn">
 				<Entry>
-					<References Name="[dbo].[user].[creation_date]" />
+					<References Name="[dbo].[User].[CreationDate]" />
 				</Entry>
 			</Relationship>
 		</Element>
 		<Element Type="ISql90DefaultConstraint">
 			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA['m']]></Value>
+				<Value><![CDATA['Male']]></Value>
 			</Property>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[user]" />
+					<References Name="[dbo].[User]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForColumn">
 				<Entry>
-					<References Name="[dbo].[user].[gender]" />
+					<References Name="[dbo].[User].[Gender]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql100Table" Name="[dbo].[activity]">
+		<Element Type="ISql100Table" Name="[dbo].[Activity]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[activity].[id]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Activity].[Id]">
 						<Property Name="IsNullable" Value="False" />
 						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
@@ -131,7 +113,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[activity].[name]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Activity].[Name]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -154,7 +136,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[activity].[description]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Activity].[Description]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -176,7 +158,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[activity].[category_id]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Activity].[CategoryId]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -198,7 +180,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[activity].[met]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Activity].[Met]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -216,7 +198,8 @@
 						<Annotation Type="ColumnConfigAnnotation">
 							<Property Name="Selected" Value="True" />
 							<Property Name="Seed" Value="5" />
-							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Tools.DataGenerator.Generators.SequentialDataboundGenerator&quot; /&gt;" />
+							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.DatabaseDecimal&quot; /&gt;" />
+							<Property Name="OutputKey" Value="Result" />
 						</Annotation>
 					</Element>
 				</Entry>
@@ -227,19 +210,14 @@
 				</Entry>
 			</Relationship>
 			<Annotation Type="TableConfigAnnotation">
-				<Property Name="NumRows" Value="150" />
-			</Annotation>
-			<Annotation Type="CardinalityConfigAnnotation">
-				<Property Name="PrimaryTableName" Value="[dbo].[activity_category]" />
-				<Property Name="PrimaryCardinality" Value="1" />
-				<Property Name="ForeignCardinality" Value="15" />
+				<Property Name="NumRows" Value="50" />
 			</Annotation>
 		</Element>
-		<Element Type="ISql100Table" Name="[dbo].[activity_category]">
+		<Element Type="ISql100Table" Name="[dbo].[ActivityCategory]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[activity_category].[id]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[ActivityCategory].[Id]">
 						<Property Name="IsNullable" Value="False" />
 						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
@@ -260,7 +238,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[activity_category].[name]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[ActivityCategory].[Name]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -283,7 +261,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[activity_category].[description]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[ActivityCategory].[Description]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -305,7 +283,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[activity_category].[image_uri]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[ActivityCategory].[ImageURI]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -322,62 +300,6 @@
 							<Property Name="Selected" Value="True" />
 							<Property Name="Seed" Value="5" />
 							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.StringGenerator&quot; /&gt;" />
-							<Property Name="OutputKey" Value="Result" />
-						</Annotation>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Owner">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="TableConfigAnnotation">
-				<Property Name="NumRows" Value="10" />
-			</Annotation>
-		</Element>
-		<Element Type="ISql100Table" Name="[dbo].[activity_picture]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="Columns">
-				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[activity_picture].[column_1]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<Annotation Type="ColumnConfigAnnotation">
-							<Property Name="Selected" Value="True" />
-							<Property Name="Seed" Value="5" />
-							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.Int&quot; /&gt;" />
-							<Property Name="OutputKey" Value="Result" />
-						</Annotation>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[activity_picture].[column_2]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<Annotation Type="ColumnConfigAnnotation">
-							<Property Name="Selected" Value="True" />
-							<Property Name="Seed" Value="5" />
-							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.Int&quot; /&gt;" />
 							<Property Name="OutputKey" Value="Result" />
 						</Annotation>
 					</Element>
@@ -587,18 +509,18 @@
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90CheckConstraint" Name="[dbo].[ck_gender]">
+		<Element Type="ISql90CheckConstraint" Name="[dbo].[CK_Gender]">
 			<Property Name="CheckExpressionScript">
-				<Value><![CDATA[gender IN ('m', 'f')]]></Value>
+				<Value><![CDATA[gender IN ('Male', 'Female')]]></Value>
 			</Property>
 			<Relationship Name="CheckExpressionDependencies">
 				<Entry>
-					<References Name="[dbo].[user].[gender]" />
+					<References Name="[dbo].[User].[Gender]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[user]" />
+					<References Name="[dbo].[User]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -633,161 +555,155 @@
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[fk_activity_activity_category]">
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[FK_ACTIVITY]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Activity].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Activity]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Activity_ActivityCategory]">
 			<Property Name="OnUpdateAction" Value="1" />
 			<Property Name="OnDeleteAction" Value="1" />
 			<Relationship Name="Columns">
 				<Entry>
-					<References Name="[dbo].[activity].[category_id]" />
+					<References Name="[dbo].[Activity].[CategoryId]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[activity]" />
+					<References Name="[dbo].[Activity]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References Name="[dbo].[activity_category].[id]" />
+					<References Name="[dbo].[ActivityCategory].[Id]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignTable">
 				<Entry>
-					<References Name="[dbo].[activity_category]" />
+					<References Name="[dbo].[ActivityCategory]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[fk_category_subcategory]">
+		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Category_Subcategory]">
 			<Relationship Name="Columns">
 				<Entry>
-					<References Name="[dbo].[food_category].[category_id]" />
+					<References Name="[dbo].[FoodCategory].[CategoryId]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[food_category]" />
+					<References Name="[dbo].[FoodCategory]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References Name="[dbo].[food_category].[id]" />
+					<References Name="[dbo].[FoodCategory].[Id]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignTable">
 				<Entry>
-					<References Name="[dbo].[food_category]" />
+					<References Name="[dbo].[FoodCategory]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[fk_food_food_category]">
+		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Food_FoodCategory]">
 			<Relationship Name="Columns">
 				<Entry>
-					<References Name="[dbo].[food].[category_subcategory]" />
+					<References Name="[dbo].[Food].[Subcategory]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[food]" />
+					<References Name="[dbo].[Food]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References Name="[dbo].[food_category].[id]" />
+					<References Name="[dbo].[FoodCategory].[Id]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignTable">
 				<Entry>
-					<References Name="[dbo].[food_category]" />
+					<References Name="[dbo].[FoodCategory]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[fk_food_food_port_pic_l]">
+		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Food_FoodPortImgLarge]">
 			<Relationship Name="Columns">
 				<Entry>
-					<References Name="[dbo].[food].[large_portion_img]" />
+					<References Name="[dbo].[Food].[LargePortionImg]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[food]" />
+					<References Name="[dbo].[Food]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References Name="[dbo].[food_portion_image].[id]" />
+					<References Name="[dbo].[FoodPortionImage].[Id]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignTable">
 				<Entry>
-					<References Name="[dbo].[food_portion_image]" />
+					<References Name="[dbo].[FoodPortionImage]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[fk_food_food_port_pic_m]">
+		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Food_FoodPortImgMedium]">
 			<Relationship Name="Columns">
 				<Entry>
-					<References Name="[dbo].[food].[medium_portion_img]" />
+					<References Name="[dbo].[Food].[MediumPortionImg]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[food]" />
+					<References Name="[dbo].[Food]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References Name="[dbo].[food_portion_image].[id]" />
+					<References Name="[dbo].[FoodPortionImage].[Id]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignTable">
 				<Entry>
-					<References Name="[dbo].[food_portion_image]" />
+					<References Name="[dbo].[FoodPortionImage]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[fk_food_food_port_pic_s]">
+		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Food_FoodPortImgSmall]">
 			<Relationship Name="Columns">
 				<Entry>
-					<References Name="[dbo].[food].[small_portion_img]" />
+					<References Name="[dbo].[Food].[SmallPortionImg]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[food]" />
+					<References Name="[dbo].[Food]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References Name="[dbo].[food_portion_image].[id]" />
+					<References Name="[dbo].[FoodPortionImage].[Id]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignTable">
 				<Entry>
-					<References Name="[dbo].[food_portion_image]" />
-				</Entry>
-			</Relationship>
-		</Element>
-		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[fk_user_activity_category]">
-			<Property Name="OnUpdateAction" Value="1" />
-			<Property Name="OnDeleteAction" Value="1" />
-			<Relationship Name="Columns">
-				<Entry>
-					<References Name="[dbo].[user_activity].[user_id]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[user_activity]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForeignColumns">
-				<Entry>
-					<References Name="[dbo].[activity_category].[id]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForeignTable">
-				<Entry>
-					<References Name="[dbo].[activity_category]" />
+					<References Name="[dbo].[FoodPortionImage]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -829,12 +745,12 @@
 			</Relationship>
 			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References Name="[dbo].[user].[user_id]" />
+					<References Name="[dbo].[User].[UserId]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignTable">
 				<Entry>
-					<References Name="[dbo].[user]" />
+					<References Name="[dbo].[User]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -853,12 +769,12 @@
 			</Relationship>
 			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References Name="[dbo].[user].[user_id]" />
+					<References Name="[dbo].[User].[UserId]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignTable">
 				<Entry>
-					<References Name="[dbo].[user]" />
+					<References Name="[dbo].[User]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -877,12 +793,12 @@
 			</Relationship>
 			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References Name="[dbo].[user].[user_id]" />
+					<References Name="[dbo].[User].[UserId]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignTable">
 				<Entry>
-					<References Name="[dbo].[user]" />
+					<References Name="[dbo].[User]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -925,12 +841,12 @@
 			</Relationship>
 			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References Name="[dbo].[user].[user_id]" />
+					<References Name="[dbo].[User].[UserId]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignTable">
 				<Entry>
-					<References Name="[dbo].[user]" />
+					<References Name="[dbo].[User]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -949,28 +865,52 @@
 			</Relationship>
 			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References Name="[dbo].[user].[user_id]" />
+					<References Name="[dbo].[User].[UserId]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignTable">
 				<Entry>
-					<References Name="[dbo].[user]" />
+					<References Name="[dbo].[User]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql100Table" Name="[dbo].[food]">
+		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_UserActivity_ActivityCategory]">
+			<Property Name="OnUpdateAction" Value="1" />
+			<Property Name="OnDeleteAction" Value="1" />
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[UserActivity].[UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[UserActivity]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[ActivityCategory].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[ActivityCategory]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql100Table" Name="[dbo].[Food]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[code]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[Id]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
-									<Property Name="Length" Value="10" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -979,13 +919,11 @@
 						<Annotation Type="ColumnConfigAnnotation">
 							<Property Name="Selected" Value="True" />
 							<Property Name="Seed" Value="5" />
-							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.StringGenerator&quot; /&gt;" />
-							<Property Name="OutputKey" Value="Result" />
 						</Annotation>
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[category_subcategory]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[Subcategory]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1007,7 +945,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[name]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[Name]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1030,7 +968,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[small_portion]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[SmallPortion]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1051,7 +989,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[medium_portion]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[MediumPortion]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1072,7 +1010,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[big_portion]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[BigPortion]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1093,7 +1031,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[small_portion_img]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[SmallPortionImg]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1114,7 +1052,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[medium_portion_img]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[MediumPortionImg]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1135,7 +1073,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[large_portion_img]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[LargePortionImg]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1156,7 +1094,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[kcal]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[Kcal]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1178,7 +1116,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[proteins]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[Proteins]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1202,7 +1140,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[fat]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[Fat]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1226,7 +1164,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[carbon_hidrates]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[CarbonHidrates]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1250,7 +1188,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[sugars]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[Sugars]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1274,7 +1212,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[alchool]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[Alchool]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1298,7 +1236,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[AG_sat]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[AG_S]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1322,7 +1260,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[AG_m]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[AG_M]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1346,7 +1284,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food].[AG_p]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Food].[AG_P]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1379,11 +1317,11 @@
 				<Property Name="NumRows" Value="50" />
 			</Annotation>
 		</Element>
-		<Element Type="ISql100Table" Name="[dbo].[food_category]">
+		<Element Type="ISql100Table" Name="[dbo].[FoodCategory]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food_category].[id]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[FoodCategory].[Id]">
 						<Property Name="IsNullable" Value="False" />
 						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
@@ -1404,7 +1342,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food_category].[category_id]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[FoodCategory].[CategoryId]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1425,7 +1363,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food_category].[name]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[FoodCategory].[Name]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1448,7 +1386,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food_category].[description]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[FoodCategory].[Description]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1479,11 +1417,11 @@
 				<Property Name="NumRows" Value="50" />
 			</Annotation>
 		</Element>
-		<Element Type="ISql100Table" Name="[dbo].[food_portion_image]">
+		<Element Type="ISql100Table" Name="[dbo].[FoodPortionImage]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food_portion_image].[id]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[FoodPortionImage].[Id]">
 						<Property Name="IsNullable" Value="False" />
 						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
@@ -1504,64 +1442,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food_portion_image].[uri]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Property Name="IsMax" Value="True" />
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<Annotation Type="ColumnConfigAnnotation">
-							<Property Name="Selected" Value="True" />
-							<Property Name="Seed" Value="5" />
-							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.StringGenerator&quot; /&gt;" />
-							<Property Name="OutputKey" Value="Result" />
-						</Annotation>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Owner">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="TableConfigAnnotation">
-				<Property Name="NumRows" Value="50" />
-			</Annotation>
-		</Element>
-		<Element Type="ISql100Table" Name="[dbo].[food_portion_pic]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="Columns">
-				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food_portion_pic].[id]">
-						<Property Name="IsNullable" Value="False" />
-						<Property Name="IsIdentity" Value="True" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<Annotation Type="ColumnConfigAnnotation">
-							<Property Name="Selected" Value="True" />
-							<Property Name="Seed" Value="5" />
-						</Annotation>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[food_portion_pic].[image]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[FoodPortionImage].[URI]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1793,13 +1674,13 @@
 				<Property Name="NumRows" Value="50" />
 			</Annotation>
 		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[pk_activity_category]">
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_ActivityCategory]">
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
 					<Element Type="ISqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[activity_category].[id]" />
+								<References Name="[dbo].[ActivityCategory].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -1807,7 +1688,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[activity_category]" />
+					<References Name="[dbo].[ActivityCategory]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -1847,13 +1728,13 @@
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[pk_category]">
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_Category]">
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
 					<Element Type="ISqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[food_category].[id]" />
+								<References Name="[dbo].[FoodCategory].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -1861,17 +1742,17 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[food_category]" />
+					<References Name="[dbo].[FoodCategory]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[pk_food]">
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_Food]">
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
 					<Element Type="ISqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[food].[code]" />
+								<References Name="[dbo].[Food].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -1879,17 +1760,17 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[food]" />
+					<References Name="[dbo].[Food]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[pk_food_picture]">
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_FoodPortionImage]">
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
 					<Element Type="ISqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[food_portion_pic].[id]" />
+								<References Name="[dbo].[FoodPortionImage].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -1897,7 +1778,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[food_portion_pic]" />
+					<References Name="[dbo].[FoodPortionImage]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -1937,13 +1818,13 @@
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[pk_picture]">
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_User]">
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
 					<Element Type="ISqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[food_portion_image].[id]" />
+								<References Name="[dbo].[User].[UserId]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -1951,43 +1832,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[food_portion_image]" />
-				</Entry>
-			</Relationship>
-		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_user]">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="ISqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[user].[user_id]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[user]" />
-				</Entry>
-			</Relationship>
-		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[pk_user_activity]">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="ISqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[user_activity].[id]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[user_activity]" />
+					<References Name="[dbo].[User]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -2117,11 +1962,29 @@
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql100Table" Name="[dbo].[user]">
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_UserActivity]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[UserActivity].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[UserActivity]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql100Table" Name="[dbo].[User]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[user].[user_id]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[User].[UserId]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -2143,7 +2006,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[user].[first_name]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[User].[FirstName]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -2159,13 +2022,13 @@
 						<Annotation Type="ColumnConfigAnnotation">
 							<Property Name="Selected" Value="True" />
 							<Property Name="Seed" Value="5" />
-							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.TinyInt&quot; /&gt;" />
+							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.StringGenerator&quot; /&gt;" />
 							<Property Name="OutputKey" Value="Result" />
 						</Annotation>
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[user].[birthdate]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[User].[Birthdate]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -2187,7 +2050,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[user].[creation_date]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[User].[CreationDate]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -2209,15 +2072,15 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[user].[gender]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[User].[Gender]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
-									<Property Name="Length" Value="1" />
+									<Property Name="Length" Value="10" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[char]" />
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -2230,7 +2093,7 @@
 							<Property Name="OutputKey" Value="Result" />
 						</Annotation>
 						<Annotation Type="InputDescriptorAnnotation">
-							<Property Name="Value" Value="[mf]" />
+							<Property Name="Value" Value="(Male|Female)+" />
 							<Property Name="InputName" Value="Expression" />
 						</Annotation>
 					</Element>
@@ -2242,129 +2105,8 @@
 				</Entry>
 			</Relationship>
 			<Annotation Type="TableConfigAnnotation">
-				<Property Name="NumRows" Value="50" />
+				<Property Name="NumRows" Value="150" />
 				<Property Name="Selected" Value="True" />
-			</Annotation>
-		</Element>
-		<Element Type="ISql100Table" Name="[dbo].[user_activity]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="Columns">
-				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[user_activity].[id]">
-						<Property Name="IsNullable" Value="False" />
-						<Property Name="IsIdentity" Value="True" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<Annotation Type="ColumnConfigAnnotation">
-							<Property Name="Selected" Value="True" />
-							<Property Name="Seed" Value="5" />
-						</Annotation>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[user_activity].[user_id]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<Annotation Type="ColumnConfigAnnotation">
-							<Property Name="Selected" Value="True" />
-							<Property Name="Seed" Value="5" />
-							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.ForeignKey&quot; /&gt;" />
-							<Property Name="OutputKey" Value="Result" />
-						</Annotation>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[user_activity].[date]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[date]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<Annotation Type="ColumnConfigAnnotation">
-							<Property Name="Selected" Value="True" />
-							<Property Name="Seed" Value="5" />
-							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.DateTime2Generator&quot; /&gt;" />
-							<Property Name="OutputKey" Value="Result" />
-						</Annotation>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[user_activity].[activity_id]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<Annotation Type="ColumnConfigAnnotation">
-							<Property Name="Selected" Value="True" />
-							<Property Name="Seed" Value="5" />
-							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.Int&quot; /&gt;" />
-							<Property Name="OutputKey" Value="Result" />
-						</Annotation>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[user_activity].[duration_min]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<Annotation Type="ColumnConfigAnnotation">
-							<Property Name="Selected" Value="True" />
-							<Property Name="Seed" Value="5" />
-							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.Int&quot; /&gt;" />
-							<Property Name="OutputKey" Value="Result" />
-						</Annotation>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="Owner">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[dbo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="TableConfigAnnotation">
-				<Property Name="NumRows" Value="50" />
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Table" Name="[dbo].[user_anthropometric_data]">
@@ -2487,7 +2229,7 @@
 				</Entry>
 			</Relationship>
 			<Annotation Type="TableConfigAnnotation">
-				<Property Name="NumRows" Value="50" />
+				<Property Name="NumRows" Value="150" />
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Table" Name="[dbo].[user_breast_feeding]">
@@ -2766,12 +2508,12 @@
 			</Relationship>
 			<Relationship Name="ForeignColumns">
 				<Entry>
-					<References Name="[dbo].[user].[user_id]" />
+					<References Name="[dbo].[User].[UserId]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="ForeignTable">
 				<Entry>
-					<References Name="[dbo].[user]" />
+					<References Name="[dbo].[User]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -3061,6 +2803,127 @@
 							<Property Name="Selected" Value="True" />
 							<Property Name="Seed" Value="5" />
 							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.DateTime2Generator&quot; /&gt;" />
+							<Property Name="OutputKey" Value="Result" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="TableConfigAnnotation">
+				<Property Name="NumRows" Value="50" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Table" Name="[dbo].[UserActivity]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[UserActivity].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<Annotation Type="ColumnConfigAnnotation">
+							<Property Name="Selected" Value="True" />
+							<Property Name="Seed" Value="5" />
+						</Annotation>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[UserActivity].[UserId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<Annotation Type="ColumnConfigAnnotation">
+							<Property Name="Selected" Value="True" />
+							<Property Name="Seed" Value="5" />
+							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.ForeignKey&quot; /&gt;" />
+							<Property Name="OutputKey" Value="Result" />
+						</Annotation>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[UserActivity].[Date]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<Annotation Type="ColumnConfigAnnotation">
+							<Property Name="Selected" Value="True" />
+							<Property Name="Seed" Value="5" />
+							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.DateTime2Generator&quot; /&gt;" />
+							<Property Name="OutputKey" Value="Result" />
+						</Annotation>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[UserActivity].[ActivityId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<Annotation Type="ColumnConfigAnnotation">
+							<Property Name="Selected" Value="True" />
+							<Property Name="Seed" Value="5" />
+							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.Int&quot; /&gt;" />
+							<Property Name="OutputKey" Value="Result" />
+						</Annotation>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[UserActivity].[DurationMin]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<Annotation Type="ColumnConfigAnnotation">
+							<Property Name="Selected" Value="True" />
+							<Property Name="Seed" Value="5" />
+							<Property Name="GeneratorExtensionHandleXml" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ExtensionHandle AssemblyName=&quot;Microsoft.Data.Schema.Generators.Sql, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot; TypeName=&quot;Microsoft.Data.Schema.Generators.Sql.Int&quot; /&gt;" />
 							<Property Name="OutputKey" Value="Result" />
 						</Annotation>
 					</Element>

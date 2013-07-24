@@ -12,7 +12,7 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <IncludeSchemaNameInFileName>False</IncludeSchemaNameInFileName>
+    <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchema</DefaultFileStructure>
     <DeployToDatabaseAddToServerExplorer>True</DeployToDatabaseAddToServerExplorer>
@@ -20,7 +20,7 @@
     <CatalogPropertiesFile>Properties\Database.sqlsettings</CatalogPropertiesFile>
     <LoadSqlClrTypes>True</LoadSqlClrTypes>
     <RootNamespace>MyEnergyDatabase</RootNamespace>
-    <DefaultSchema>dbo</DefaultSchema>
+    <DefaultSchema>MyEnergy</DefaultSchema>
     <PreviousProjectVersion>4.0</PreviousProjectVersion>
     <SccProjectName>
     </SccProjectName>
@@ -68,29 +68,29 @@
     <Folder Include="Properties\" />
     <Folder Include="Schema Objects\" />
     <Folder Include="Schema Objects\Schemas\" />
-    <Folder Include="Schema Objects\Schemas\dbo\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Defaults\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Functions\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Rules\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Types\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Types\User Defined Data Types\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Types\User Defined Types CLR\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Types\User Defined Table Types\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Types\XML Schema Collections\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Service Broker\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Service Broker\Queues\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Synonyms\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\Constraints\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\Indexes\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\Keys\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\Statistics\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Views\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Views\Indexes\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Views\Triggers\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Views\Statistics\" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Programmability" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Programmability\Defaults" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Programmability\Functions" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Programmability\Rules" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Programmability\Types" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Programmability\Types\User Defined Data Types" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Programmability\Types\User Defined Types CLR" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Programmability\Types\User Defined Table Types" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Programmability\Types\XML Schema Collections" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Service Broker" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Service Broker\Queues" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Synonyms" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Tables" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Tables\Constraints" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Tables\Indexes" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Tables\Keys" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Tables\Statistics" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Views" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Views\Indexes" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Views\Triggers" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Views\Statistics" />
     <Folder Include="Schema Objects\Database Level Objects\" />
     <Folder Include="Schema Objects\Database Level Objects\Assemblies\" />
     <Folder Include="Schema Objects\Database Level Objects\Database Triggers\" />
@@ -122,7 +122,7 @@
     <Folder Include="Schema Objects\Database Level Objects\Storage\Full Text Catalogs\" />
     <Folder Include="Schema Objects\Database Level Objects\Storage\Partition Functions\" />
     <Folder Include="Schema Objects\Database Level Objects\Storage\Partition Schemes\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\Statistics\Triggers" />
+    <Folder Include="Schema Objects\Schemas\MyEnergy\Tables\Statistics\Triggers" />
   </ItemGroup>
   <ItemGroup>
     <PropertiesFile Include="Properties\Database.sqlsettings">
@@ -145,67 +145,76 @@
     <BuildContributorArgument Include="OutDir=$(OutDir)" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\activity.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\activity.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\user.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\User.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\activity_category.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\ActivityCategory.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\user_physical_activity.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\UserActivity.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\GetUserById.proc.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\GetUserById.proc.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\GetUsers.proc.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\GetUsers.proc.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\user_anthropometric.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_anthropometric.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\user_medical_condition.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_medical_condition.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\medical_condition.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\medical_condition.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\medication.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\medication.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\user_pregnancy.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_pregnancy.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\breast_feeding.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\breast_feeding.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\user_food_intake.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_food_intake.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\food_category.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\FoodCategory.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\food.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\Food.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\food_portion_image.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\FoodPortionImage.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\user_medication.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_medication.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\anthropometric_trait.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\anthropometric_trait.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\activity_picture.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_breast_feading.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\user_breast_feading.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\DeleteUserWithId.proc.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\DeleteUserWithId.proc.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\GetFoods.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\GetFoodById.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\DeleteFoodWithId.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema1.schema.sql">
       <SubType>Code</SubType>
     </Build>
   </ItemGroup>
@@ -213,8 +222,5 @@
     <NotInBuild Include="Data Generation Plans\DataGenerationPlan1.dgen">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\picture.table.sql">
-      <SubType>Code</SubType>
-    </Build>
   </ItemGroup>
 </Project>

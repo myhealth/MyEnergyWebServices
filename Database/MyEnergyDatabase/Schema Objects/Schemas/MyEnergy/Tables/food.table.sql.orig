@@ -1,0 +1,60 @@
+﻿CREATE TABLE [dbo].[food]
+(
+<<<<<<< HEAD
+	[code] NVARCHAR(10) NOT NULL, 
+=======
+	[iso_code] NVARCHAR(10) NOT NULL, 
+>>>>>>> 9604155ff57367e6d46ab7077787bb64535858d0
+	[category_subcategory] INT NOT NULL,
+	[name] NVARCHAR(255) NOT NULL,
+
+	[small_portion] INT NULL,
+	[medium_portion] INT NULL,
+	[big_portion] INT NULL,
+	
+<<<<<<< HEAD
+	[small_portion_img] INT NULL,
+	[medium_portion_img] INT NULL,
+	[large_portion_img] INT NULL,
+=======
+	[small_portion_pic] INT NULL,
+	[medium_portion_pic] INT NULL,
+	[large_portion_pic] INT NULL,
+>>>>>>> 9604155ff57367e6d46ab7077787bb64535858d0
+
+	/** Nutrictional information per 100g*/
+	[kcal] INT NOT NULL,
+	[proteins] DECIMAL(5,2) NOT NULL,
+	[fat] DECIMAL(5,2) NOT NULL,
+	[carbon_hidrates] DECIMAL (5,2) NOT NULL,
+	[sugars] DECIMAL (5,2) NOT NULL,
+	[alchool] DECIMAL (5,2) NOT NULL DEFAULT 0,
+
+	[AG_sat] DECIMAL (5,2) NOT NULL,
+	[AG_m] DECIMAL (5,2) NOT NULL,
+	[AG_p] DECIMAL (5,2) NOT NULL,
+
+
+<<<<<<< HEAD
+	CONSTRAINT pk_food PRIMARY KEY ([code]),
+=======
+	CONSTRAINT pk_food PRIMARY KEY ([iso_code]),
+>>>>>>> 9604155ff57367e6d46ab7077787bb64535858d0
+
+	CONSTRAINT fk_food_food_category 
+		FOREIGN KEY 
+			([category_subcategory])
+		REFERENCES
+			[food_category](id),
+	
+
+<<<<<<< HEAD
+	CONSTRAINT fk_food_food_port_pic_s FOREIGN KEY ([small_portion_img]) REFERENCES [food_portion_image]([id]),
+	CONSTRAINT fk_food_food_port_pic_m FOREIGN KEY ([medium_portion_img]) REFERENCES [food_portion_image]([id]),
+	CONSTRAINT fk_food_food_port_pic_l FOREIGN KEY ([large_portion_img]) REFERENCES [food_portion_image]([id])
+=======
+	CONSTRAINT fk_food_food_port_pic_s FOREIGN KEY ([small_portion_pic]) REFERENCES [food_portion_pic]([id]),
+	CONSTRAINT fk_food_food_port_pic_m FOREIGN KEY ([medium_portion_pic]) REFERENCES [food_portion_pic]([id]),
+	CONSTRAINT fk_food_food_port_pic_l FOREIGN KEY ([large_portion_pic]) REFERENCES [food_portion_pic]([id])
+>>>>>>> 9604155ff57367e6d46ab7077787bb64535858d0
+)

@@ -1,0 +1,17 @@
+﻿CREATE TABLE [dbo].[Activity]
+(
+	[Id] INT NOT NULL IDENTITY, 
+	[Name] NVARCHAR(200) NOT NULL,
+	[Description] NVARCHAR(1000),
+	[CategoryId] INT NOT NULL,
+	[Met] DECIMAL(5,2) NOT NULL,
+	
+	CONSTRAINT FK_ACTIVITY PRIMARY KEY(Id),
+
+	CONSTRAINT [FK_Activity_ActivityCategory] 
+		FOREIGN KEY(CategoryId) REFERENCES ActivityCategory(Id)
+		ON DELETE CASCADE 
+		ON UPDATE CASCADE  
+
+)
+
