@@ -22,7 +22,7 @@ CREATE TABLE [dbo].[user_medical_condition]
 			ON UPDATE CASCADE,
 
 	CONSTRAINT fk_user_med_cond_med_cond 
-		FOREIGN KEY ([med_cond_id]) REFERENCES medical_condition([id])
+		FOREIGN KEY ([med_cond_id]) REFERENCES MedicalCondition([Id])
 			ON DELETE CASCADE 
 			ON UPDATE CASCADE,
 )

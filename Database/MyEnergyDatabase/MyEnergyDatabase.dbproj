@@ -145,7 +145,7 @@
     <BuildContributorArgument Include="OutDir=$(OutDir)" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\activity.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\Activity.table.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\User.table.sql">
@@ -157,22 +157,16 @@
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\UserActivity.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\GetUserById.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\GetUsers.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_anthropometric.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\UserAnthropometricData.table.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_medical_condition.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\medical_condition.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\MedicalCondition.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\medication.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\Medication.table.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_pregnancy.table.sql">
@@ -196,30 +190,21 @@
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_medication.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\anthropometric_trait.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\AnthropometricTrait.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_breast_feading.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\DeleteUserWithId.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\GetFoods.proc.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\UserBreastFeading.table.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\GetFoodById.proc.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\DeleteFoodWithId.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema1.schema.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\FoodSubcategory.table.sql">
       <SubType>Code</SubType>
     </Build>
   </ItemGroup>
   <ItemGroup>
-    <NotInBuild Include="Data Generation Plans\DataGenerationPlan1.dgen">
+    <NotInBuild Include="Data Generation Plans\FoodsGen.dgen">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
   </ItemGroup>

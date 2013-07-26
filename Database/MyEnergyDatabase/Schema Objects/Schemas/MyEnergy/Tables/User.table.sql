@@ -4,7 +4,7 @@
 	[FirstName] NVARCHAR(50),
 	[Birthdate] DATE NOT NULL,
 	[CreationDate] DATE NOT NULL DEFAULT GETDATE(),
-	[Gender] NVARCHAR(12)  DEFAULT 'Male' NOT NULL,
+	[Gender] NVARCHAR(16)  DEFAULT 'Male' NOT NULL,
 	
 
 	CONSTRAINT PK_User PRIMARY KEY([UserId]),

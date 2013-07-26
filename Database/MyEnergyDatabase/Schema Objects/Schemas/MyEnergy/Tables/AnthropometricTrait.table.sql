@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[anthropometric_trait]
+﻿CREATE TABLE [dbo].[AnthropometricTrait]
 (
 	[name] NVARCHAR(255) NOT NULL, 
 	[data_type] NVARCHAR(15) NOT NULL,

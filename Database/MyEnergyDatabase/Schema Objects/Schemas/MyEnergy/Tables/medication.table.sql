@@ -1,8 +1,8 @@
-﻿CREATE TABLE [dbo].[medication]
+﻿CREATE TABLE [dbo].[Medication]
 (
-	[id] INT NOT NULL IDENTITY, 
-	[name] NVARCHAR(255) NOT NULL,
-	[description] TEXT,
+	[Id] INT NOT NULL IDENTITY, 
+	[Name] NVARCHAR(255) NOT NULL,
+	[Description] TEXT,
 
-	CONSTRAINT pk_medication PRIMARY KEY([id])
+	CONSTRAINT PK_Medication PRIMARY KEY([Id])
 )

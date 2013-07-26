@@ -25,11 +25,12 @@
 	[AG_S] DECIMAL (5,2) NOT NULL,
 	[AG_M] DECIMAL (5,2) NOT NULL,
 	[AG_P] DECIMAL (5,2) NOT NULL,
+	
 
 
 	CONSTRAINT PK_Food PRIMARY KEY ([Id]),
 
-	CONSTRAINT FK_Food_FoodCategory FOREIGN KEY ([Subcategory]) REFERENCES	[FoodCategory](Id),
+	CONSTRAINT FK_Food_FoodCategory FOREIGN KEY ([Subcategory]) REFERENCES	[FoodSubcategory](Id),
 	
 
 	CONSTRAINT FK_Food_FoodPortImgSmall		FOREIGN KEY ([SmallPortionImg]) REFERENCES [FoodPortionImage]([Id]),

@@ -1,11 +1,11 @@
-﻿CREATE TABLE [dbo].[user_anthropometric_data]
+﻿CREATE TABLE [dbo].[UserAnthropometricData]
 (
-	[user_id] BIGINT NOT NULL,
-	[date] INT NOT NULL,
+	[UserId] BIGINT NOT NULL,
+	[Date] INT NOT NULL,
 
-	[trait_name] NVARCHAR(255) NOT NULL,
-	[v_decimal] DECIMAL NULL,
-	[v_int] INT NULL,
+	[TraitName] NVARCHAR(255) NOT NULL,
+	[VDecimal] DECIMAL NULL,
+	[VInt] INT NULL,
 	
 	/*
 	[gordura_corporal_relativa] DECIMAL(5,2) NOT NULL,
@@ -23,15 +23,15 @@
 	[espessura_adutor_policis] SMALLINT NOT NULL,
 	*/
 
-	CONSTRAINT pk_user_antro_data PRIMARY KEY([user_id], [date], [trait_name]),
-	CONSTRAINT fk_user_antro_data_user  
-		FOREIGN KEY([user_id])
-			REFERENCES [user](UserId) 
+	CONSTRAINT PK_UserAntroData PRIMARY KEY([UserId], [Date], [TraitName]),
+	CONSTRAINT FK_User_AntroData_User  
+		FOREIGN KEY([UserId])
+			REFERENCES [User](UserId) 
 			ON DELETE CASCADE,
 
-	CONSTRAINT fk_user_antro_data_trait  
-		FOREIGN KEY([trait_name]) 
-			REFERENCES [anthropometric_trait]([name]) 
+	CONSTRAINT Fk_UserAntroData_Trait  
+		FOREIGN KEY([TraitName]) 
+			REFERENCES [AnthropometricTrait]([Name]) 
 			ON DELETE CASCADE 
 			ON UPDATE CASCADE  
 
