@@ -1,0 +1,14 @@
+﻿CREATE TABLE [dbo].[UserPregnancy]
+(
+	[Id] BIGINT NOT NULL IDENTITY,
+	[UserId] BIGINT NOT NULL,
+	[StartDate] DATE NOT NULL,
+	[EndDate] DATE NULL,
+
+	CONSTRAINT PK_UserPregancy PRIMARY KEY([Id]),
+	
+	CONSTRAINT FK_UserPregancy_User 
+		FOREIGN KEY([UserId]) REFERENCES [User](UserId)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+)

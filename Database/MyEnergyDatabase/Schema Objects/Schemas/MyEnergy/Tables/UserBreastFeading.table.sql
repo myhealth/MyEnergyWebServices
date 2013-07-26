@@ -1,15 +1,15 @@
 ﻿
-CREATE TABLE [dbo].[user_breast_feeding]
+CREATE TABLE [dbo].[UserBreastFeeding]
 (
-	[id] BIGINT NOT NULL IDENTITY,
-	[user_id] BIGINT NOT NULL,
-	[start_date] DATE NOT NULL,
-	[end_date] DATE NULL,
+	[Id] BIGINT NOT NULL IDENTITY,
+	[UserId] BIGINT NOT NULL,
+	[StartDate] DATE NOT NULL,
+	[EndDate] DATE NULL,
 
-	CONSTRAINT pk_user_breast_feeding PRIMARY KEY([id]),
+	CONSTRAINT PK_UserBreastFeeding PRIMARY KEY([Id]),
 	
-	CONSTRAINT fk_user_breast_feeding_user 
-		FOREIGN KEY([user_id]) REFERENCES [User]([UserId])
+	CONSTRAINT FK_UserBreastFeeding_User 
+		FOREIGN KEY(UserId) REFERENCES [User](UserId)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 )

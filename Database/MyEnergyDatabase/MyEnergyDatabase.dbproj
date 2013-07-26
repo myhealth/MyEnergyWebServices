@@ -160,7 +160,7 @@
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\UserAnthropometricData.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_medical_condition.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\UserMedicalCondition.table.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\MedicalCondition.table.sql">
@@ -169,13 +169,13 @@
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\Medication.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_pregnancy.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\UserPregnancy.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\breast_feeding.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\BreastFeeding.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_food_intake.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\UserFoodIntake.table.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\FoodCategory.table.sql">
@@ -187,7 +187,7 @@
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\FoodPortionImage.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\user_medication.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\UserMedication.table.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\AnthropometricTrait.table.sql">
@@ -196,15 +196,15 @@
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\UserBreastFeading.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Programmability\Stored Procedures\GetFoodById.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\FoodSubcategory.table.sql">
       <SubType>Code</SubType>
     </Build>
   </ItemGroup>
   <ItemGroup>
     <NotInBuild Include="Data Generation Plans\FoodsGen.dgen">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Data Generation Plans\MyEnergy.sqlgen">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
   </ItemGroup>

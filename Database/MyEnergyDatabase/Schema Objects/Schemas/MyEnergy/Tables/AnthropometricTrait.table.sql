@@ -1,11 +1,11 @@
 ﻿CREATE TABLE [dbo].[AnthropometricTrait]
 (
-	[name] NVARCHAR(255) NOT NULL, 
-	[data_type] NVARCHAR(15) NOT NULL,
-	[description] NVARCHAR(MAX) NULL,
+	[Name] NVARCHAR(255) NOT NULL, 
+	[DataType] NVARCHAR(15) NOT NULL,
+	[Description] NVARCHAR(MAX) NULL,
 
 	
-	CONSTRAINT pk_anthropometric_trait PRIMARY KEY(name),
+	CONSTRAINT PK_AnthropometricTrait PRIMARY KEY(Name),
 	
-	CONSTRAINT ck_data_type CHECK([data_type] IN ('decimal', 'integer'))
+	CONSTRAINT CK_DataType CHECK([DataType] IN ('decimal', 'integer'))
 )
