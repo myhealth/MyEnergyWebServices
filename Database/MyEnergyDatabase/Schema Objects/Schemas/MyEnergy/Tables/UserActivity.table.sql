@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[UserActivity]
 (
 	Id INT NOT NULL IDENTITY,  
-	[UserId] INT NULL, 
+	[UserId] INT NOT NULL, 
 	[Date] DATE NOT NULL,
 	[ActivityId] INT NOT NULL,
 	[DurationMin] INT NOT NULL,

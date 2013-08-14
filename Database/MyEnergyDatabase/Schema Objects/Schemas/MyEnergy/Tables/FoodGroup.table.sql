@@ -1,0 +1,17 @@
+﻿CREATE TABLE [dbo].[FoodGroup]
+(
+	[Id] INT NOT NULL IDENTITY, 
+	[ParentId] INT NULL,
+	[Name] NVARCHAR(300) NOT NULL,
+	[Description] NVARCHAR(MAX),
+	
+	
+
+	CONSTRAINT PK_FoodGroup PRIMARY KEY(Id),	
+	/*CONSTRAINT UQ_FoodGroupName UNIQUE (Name),*/
+
+	CONSTRAINT FK_FoodGroup_FoodGroup
+		FOREIGN KEY ([ParentId]) REFERENCES FoodGroup(Id) 
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+)

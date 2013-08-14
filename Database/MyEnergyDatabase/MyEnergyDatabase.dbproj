@@ -13,7 +13,7 @@
     <RootPath>
     </RootPath>
     <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>2070,CI</ModelCollation>
     <DefaultFileStructure>BySchema</DefaultFileStructure>
     <DeployToDatabaseAddToServerExplorer>True</DeployToDatabaseAddToServerExplorer>
     <DeployToScript>True</DeployToScript>
@@ -56,6 +56,7 @@
     <SqlCommandVariablesFile>Properties\Database.sqlcmdvars</SqlCommandVariablesFile>
     <DeployToDatabase>True</DeployToDatabase>
     <DeployScriptFileName>MyEnergy.sql</DeployScriptFileName>
+    <DBSchemaFileName>MyEnergy</DBSchemaFileName>
   </PropertyGroup>
   <!--Import the settings-->
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\TeamData\Microsoft.Data.Schema.SqlTasks.targets" />
@@ -178,7 +179,7 @@
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\UserFoodIntake.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\FoodCategory.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\FoodGroup.table.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\Food.table.sql">
@@ -196,15 +197,12 @@
     <Build Include="Schema Objects\Schemas\MyEnergy\Tables\UserBreastFeading.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\FoodSubcategory.table.sql">
+    <Build Include="Schema Objects\Schemas\MyEnergy\Tables\Alimentos.table.sql">
       <SubType>Code</SubType>
     </Build>
   </ItemGroup>
   <ItemGroup>
-    <NotInBuild Include="Data Generation Plans\FoodsGen.dgen">
-      <SubType>NotInBuild</SubType>
-    </NotInBuild>
-    <NotInBuild Include="Data Generation Plans\MyEnergy.sqlgen">
+    <NotInBuild Include="ImportAlimentosCSV.sql">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
   </ItemGroup>

@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [FoodPortionImage]
 (
 	[Id] INT NOT NULL IDENTITY, 
-	[URI] NVARCHAR(MAX) NOT NULL,
+	[Uri] NVARCHAR(MAX) NOT NULL,
 	
 
 	CONSTRAINT PK_FoodPortionImage PRIMARY KEY([Id])

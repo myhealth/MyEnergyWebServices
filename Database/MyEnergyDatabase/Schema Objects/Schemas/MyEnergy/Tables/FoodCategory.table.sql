@@ -1,9 +1,0 @@
-﻿CREATE TABLE [dbo].[FoodCategory]
-(
-	[Id] INT NOT NULL IDENTITY, 
-	[Name] NVARCHAR(512) NOT NULL UNIQUE,
-	[Description] NVARCHAR(MAX),
-
-
-	CONSTRAINT PK_FoodCategory PRIMARY KEY(Id),	
-)
